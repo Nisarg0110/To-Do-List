@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js" defer></script>
+    <title>Todo</title>
+    <style>
+      :root {
+        --gradient: linear-gradient(
+          180deg,
+          rgba(45, 112, 1253, 0.73) 0%,
+          #163e92 100%
+        );
+        --dark: #001747;
+        --grey: #b1bacb;
+        --grey-border: rgba(210, 210, 210, 0.75);
+        --grey-light: #eeeeee;
+        --grey-dark: $405175;
+        --blue: #2d70fd;
+        --green: #00d8a7;
+        --white: #ffffff;
+      }
+
+      body {
+        background: var(--gradient);
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .btn {
+        color: var(--white);
+        font-size: 1.1rem;
+        padding: 0.7rem 1.5rem;
+        border-radius: 0.3rem;
+        background-color: var(--blue);
+        border: none;
+        position: absolute;
+        right: 0.5rem;
+        bottom: 0.5rem;
+      }
+
+      h1,h2,h3,h4,h5,h6,p{
+        margin: 0;
+      }
+      h2 {
+        text-transform: uppercase;
+        height: 3rem;
+        color: var(--dark);
+        text-align: center;
+      }
+
+      .input {
+        position: relative;
+        display: flex;
+      }
+
+      .input-field {
+        width: 100%;
+        border: 0.06rem solid #d2d2d2bf;
+        border-radius: 0.5rem;
+        padding: 1.25rem;
+        font-size: 1rem;
+      }
+
+      input[type="text"]::placeholder {
+        color: var(--grey);
+      }
+      ul {
+        padding: 0;
+        margin: 0;
+        overflow-y: scroll;
+      }
+
+      li {
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+        padding: 1.3rem;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="todo">
+      <h2>To-do list</h2>
+      <div class="input">
+        <input
+          type="text"
+          class="input-field"
+          id="todoInput"
+          placeholder="Add a new todo"
+        />
+        <button class="btn">Add</button>
+      </div>
+      <ul class="scroll">
+        <li id="todoList"></li>
+      </ul>
+      <div>
+        <hr class="counter" />
+        <div class="counter-container">
+          <p><span id="todoCount">0</span> items total</p>
+          <button id="deleteButton">Delete All</button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
